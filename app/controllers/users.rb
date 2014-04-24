@@ -1,7 +1,8 @@
 get '/' do
-	@error = params[:error]
+	@message = params[:message]
 	erb :login_or_signup
 end
+
 
 post '/login' do
 	# authenticate user, stuff user_id into session
@@ -18,24 +19,17 @@ post '/login' do
 		session[:user_id] = @user.id
 		redirect "/users/#{@user.id}"
 	else
-		@message = "Failed Login"
-		redirect '/'
+		redirect "/?error=Failed Login"
 	end
 end
 
 
-post '/signup' do
+post '/users' do
 	#save user info, encrypt password & store
 	new_user = User.new(username: params[:username], bio: params[:bio])
 	new_user.password = params[:password]
 	new_user.save
-	redirect '/signup_confirm'
-end
-
-
-get '/signup_confirm' do
-	@message = "Thank you for signing up. Please log in to your new account."
-	erb :index
+	redirect '/?message=Thank you for signing up. Please log in to your new account.'
 end
 
 
@@ -48,6 +42,5 @@ end
 
 get 'logout'  do
 	session[:user_id] = nil
-	@message = "You are now logged out."
-	redirect '/'
+	redirect '/?message=You are now logged out.'
 end
