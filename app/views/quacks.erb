@@ -1,0 +1,13 @@
+<form action="/quacks" method="post">
+  <textarea rows="3" cols="45">
+  </textarea>
+  <input type="submit" value="Add Band" />
+</form>
+
+<% if @quacks %>
+<ul>
+  <% @quacks.each do |quack| %>
+    <li><%= quack.content %></li>
+  <% end %>
+</ul>
+<% end %>
