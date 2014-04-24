@@ -5,16 +5,8 @@ end
 
 
 post '/login' do
-	# authenticate user, stuff user_id into session
 	@user = User.where(username: params[:username]).first
-	
-	# if this_user.password == params[:password]
-	# 	redirect "/users/#{this_user.id}"
-	# session[:user_id] = this_user.id
-	# else
-	# 	@message = "Failed Login"
-	# 	redirect '/'
-	# end
+
 	if @user && @user.password == params[:password]
 		session[:user_id] = @user.id
 		redirect "/users/#{@user.id}"
@@ -25,7 +17,6 @@ end
 
 
 post '/users' do
-	#save user info, encrypt password & store
 	new_user = User.new(username: params[:username], bio: params[:bio])
 	new_user.password = params[:password]
 	new_user.save
