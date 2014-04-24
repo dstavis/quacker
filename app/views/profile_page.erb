@@ -1,0 +1,11 @@
+<div class="user_card">
+	<h2><%= @user.username %></h2>
+	<p><%= @user.bio %></p>
+</div>
+
+<form class="logout" action="/logout" method="post">
+	<input type="Submit" value="Logout">
+</form>
+
+<% @user.quacks.each do |quack| %>
+<% end %>
