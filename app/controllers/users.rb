@@ -19,7 +19,7 @@ post '/login' do
 		session[:user_id] = @user.id
 		redirect "/users/#{@user.id}"
 	else
-		redirect "/?error=Failed Login"
+		redirect "/?message=Failed Login"
 	end
 end
 
