@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :followees, through: :flockings
   has_many :followers, through: :flockings
   validates :username, uniqueness: true
+  validates :password, presence: true
 
   include BCrypt
 
@@ -27,7 +28,7 @@ class User < ActiveRecord::Base
 
   def incoming_quacks
     incoming_quacks = []
-    
+
     self.followees.each do |leader|
       leader.quacks.each do |quack|
         incoming_quacks << quack

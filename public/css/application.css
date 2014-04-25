@@ -43,18 +43,22 @@ h1.logo{
 form {
 	margin: 20px auto;
 	width: 42%;
-}
-
-textarea{
-	margin-left: 10px;
+	margin-bottom: 80px;
 }
 
 form.login input {
 	display: block;
-	margin: 10px;
+	margin: 10px 10px 20px 10px;
+
 }
 
+form textarea {
+	margin-left: 10px;
+}
 
+li form {
+	margin: 5px;
+}
 
 /* FOOTER */
 
