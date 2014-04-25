@@ -1,7 +1,11 @@
 get '/' do
-  @message = params[:message]
-
-  erb :login_or_signup
+  
+  unless logged_in?
+    @message = params[:message]
+    erb :login_or_signup
+  else
+    redirect "/users/#{current_user.id}"
+  end
 end
 
 post '/login' do

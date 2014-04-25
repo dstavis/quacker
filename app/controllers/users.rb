@@ -11,33 +11,29 @@ get '/users' do
 end
 
 get '/users/:id/followees' do
-    user_id = session[:user_id]
-    # followee_id
-    # @followees = Flocking.where(user_id => followee_id)
-    current_user = User.find(user_id)
-    @flockings = current_user.flockings.all
-    @followees=[]
-    @flockings.each do |flocked|
+  user_id = session[:user_id]
+  
+  current_user = User.find(user_id)
+  @flockings = current_user.flockings.all
+  @followees = []
+  @flockings.each do |flocked|
 
-        @followees<<User.find_by_id(flocked.followee_id)
+  @followees<<User.find_by_id(flocked.followee_id)
+  end
 
-          #<li><%=User.find_by_id(followee.followee_id).username %></li>
-
-    end
-
-    p "**********"
-    p @followees
-    p "**********"
-    erb :list_followees
+  erb :list_followees
 end
 
 get '/users/:id' do
 	@user = User.find(params[:id])
-	#pull in quackmaker form??
 
-	# p User.first.followed_by
-	# p User.first.follows
 	erb :profile_page
+end
+
+get '/users/:id/feed' do
+  @user = User.find(params[:id])
+
+  erb :feed
 end
 
 post '/flockings/new' do

@@ -20,9 +20,20 @@ class User < ActiveRecord::Base
     @followers = Flocking.where(followee_id: user_id )
   end
 
-    # same for session[:user_id]
+  # same for session[:user_id]
   def follows user_id
     @flock = User.find( user_id )
+  end
+
+  def followees
+    @flockings = self.flockings.all
+    @followees = []
+    
+    @flockings.each do |flocked|
+      @followees << User.find_by_id(flocked.followee_id)
+    end
+
+    @followees
   end
 
   def incoming_quacks
@@ -33,7 +44,7 @@ class User < ActiveRecord::Base
         incoming_quacks << quack
       end
     end
-    return incoming_quacks.sort_by(quack.id).reverse
+    return incoming_quacks.sort_by{|quack| quack.id}.reverse
   end
 
 end
