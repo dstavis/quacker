@@ -1,0 +1,52 @@
+
+MIGRATION
+
+class CreateFlockings < ActiveRecord::Migration
+def change
+  create_table do |t|
+    t.integer :follower_id
+    t.integer :followee_id
+    t.timestamps
+  end
+end
+
+
+VIEW
+Click 'Follow' sends this:
+method = "post" action = "/follow/#{user_id}"
+
+
+CONTROLLER
+post '/follow/:followee_id' do
+  current_user = User.find(session[:user_id])
+  current_user.flockings.build(followee_id: params[:followee_id])
+end
+
+
+MODEL
+class User < ActiveRecord::Base
+  has_many :flockings, foreign_key: "follower_id",
+  has_many :followees, through: :flockings
+  has_many :followers, through: :flockings
+
+  def followed_by
+    @followers = Flocking.where(followee_id: session[:user_id])
+  end
+
+  def follows
+    @flock = User.find(session[:user_id])
+  end
+end
+
+????????
+class Flocking < ActiveRecord::Base
+  belongs_to :follower, class_name: "User"
+  belongs_to :followee, class_name: "User"
+end
+
+  if needed add to the User model
+  has_many :reverse_relationships, foreign_key: "followee_id", class_name: "Flockings"
+
+
+
+
