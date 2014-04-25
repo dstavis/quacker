@@ -8,12 +8,13 @@ header{
 
 img.logo{
 	display: inline;
-	width:100px;
-	height: 100px;
 }
 
 h1.logo{
 	display: inline;
+	line-height: 100px;
+	vertical-align: middle;
+	margin-bottom: 20px;
 }
 
 /* MAIN */
@@ -40,8 +41,12 @@ h1.logo{
 }
 
 form {
-	margin: 60px auto;
+	margin: 20px auto;
 	width: 42%;
+}
+
+textarea{
+	margin-left: 10px;
 }
 
 form.login input {
