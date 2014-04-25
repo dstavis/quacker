@@ -16,11 +16,11 @@ class User < ActiveRecord::Base
   	self.password_hash = @password
   end
 
-  def followed_by
-    @followers = Flocking.where(followee_id: session[:user_id])
-  end
+  # def followed_by
+  #   @followers = Flocking.where(followee_id: session[:user_id])
+  # end
 
-  def follows
-    @flock = User.find(session[:user_id])
-  end
+  # def follows
+  #   @flock = User.find(session[:user_id])
+  # end
 end

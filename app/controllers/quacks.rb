@@ -4,7 +4,7 @@ get '/quacks/:id' do #not restful
 end
 
 # create
-post '/quacks/create' do #consider changing to match restful routing standard
+post '/quacks' do
   quack = Quack.create( params )
   redirect "/users/#{quack.user_id}"
 end
