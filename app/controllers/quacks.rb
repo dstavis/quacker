@@ -1,4 +1,4 @@
-get '/quacks/:id/show' do #not restful
+get '/quacks/:id' do #not restful
   @quacks = Quack.all
   erb :quacks
 end
@@ -13,7 +13,7 @@ end
 post '/quacks/:id/delete' do
   p params["id"].to_i
 	quack = Quack.find_by_id(params["id"].to_i).destroy #consider switching to just "find"(defaults to by id)
-  redirect "/user/#{quack.user_id}"
+  redirect "/users/#{quack.user_id}"
 end
 
 

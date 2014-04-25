@@ -1,5 +1,6 @@
 get '/' do
 	@message = params[:message]
+
 	erb :login_or_signup
 end
 
@@ -25,13 +26,19 @@ end
 
 
 get '/users/:id' do
-	p "*"*50
-p params
-p "*"*50
 	@user = User.find(params[:id])
-
 	#pull in quackmaker form??
+
+	p User.first.followed_by
+	p User.first.follows
 	erb :profile_page
+end
+
+post '/follow/:followee_id' do
+  current_user = User.find(session[:user_id])
+  current_user.flockings.build(followee_id: params[:followee_id])
+  # Flocking.create(followee_id: params[:followee_id], follower_id: current_user.id)
+  redirect "/"
 end
 
 

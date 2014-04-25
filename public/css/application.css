@@ -12,7 +12,7 @@ th {
 /* HEADER */
 
 header{
-	background-color: green;
+	background-color: #B7CC14;
 	border-bottom: 4px solid black;
 	padding: 5px;
 }
@@ -32,7 +32,7 @@ header{
 	width:100%;
 	margin: 0 auto;
 
-	background-color: pink;
+	background-color: #FFD500;
 }
 
 .main {
@@ -41,13 +41,16 @@ header{
 	margin: 0 auto;
 	width: 600px;
 	height: auto;
-	background-color: purple;
+	background-color: #EEE;
+	-webkit-box-shadow: 0px 4px 5px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 4px 5px 5px rgba(0,0,0,0.75);
+	box-shadow: 0px 4px 5px 5px rgba(0,0,0,0.75);
 
 	padding-bottom: 200px;
 }
 
 form {
-	margin: 0 auto;
+	margin: 60px auto;
 	width: 42%;
 }
 
@@ -61,9 +64,6 @@ form.login input {
 /* FOOTER */
 
 footer {
-	position: absolute;
-	bottom: 0;
-
 	width:100%;
 }
 

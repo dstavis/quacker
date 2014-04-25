@@ -16,13 +16,18 @@
 
 <ul>
 <% @user.quacks.each do |quack| %>
-	<li><%= quack.content %></li>
+	<li><%= quack.content %>
+    <form action="/quacks/<%= quack.id %>/delete" method="post">
+      <input type="submit" value="Delete">
+    </form>
+  </li>
 	<% end %>
 </ul>
 
 <div class="container">
 	<!-- consider changing so that each quack links to the quack's individual page (which displays only that quack), and the delete link is on that page, not this one. -->
-<form action="/quacks/<%= params[:id] %>/delete" method="post"> 
+<form action="/quacks/<%= params[:id] %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>
 </div>
+
