@@ -2,10 +2,7 @@
   <h2>Ducks in your flock (people you're following)</h2>
   <ul>
     <% @followees.each do |followee| %>
-
-        <%=followee.followee_id%>
-          <li><%=User.find_by_id(1).username %></li>
-
+      <li><%=followee.username%></li>
     <% end %>
   </ul>
   <% end %>

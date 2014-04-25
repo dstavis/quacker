@@ -15,7 +15,16 @@ get '/users/:id/followees' do
     # followee_id
     # @followees = Flocking.where(user_id => followee_id)
     current_user = User.find(user_id)
-    @followees = current_user.flockings.all
+    @flockings = current_user.flockings.all
+    @followees=[]
+    @flockings.each do |flocked|
+
+        @followees<<User.find_by_id(flocked.followee_id)
+
+          #<li><%=User.find_by_id(followee.followee_id).username %></li>
+
+    end
+
     p "**********"
     p @followees
     p "**********"
