@@ -1,5 +1,5 @@
 class Flocking < ActiveRecord::Base
   belongs_to :user
 
-  validates_uniqueness_of :user_id, { :scope => :follower_id }
+  #validates_uniqueness_of :follower_id, { :scope => :user_id }
 end

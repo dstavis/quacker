@@ -14,8 +14,9 @@
 </form>
 
 <ul>
+  <li><h4><%= @user.username %> quacked</h4></li>
 <% @user.quacks.each do |quack| %>
-	<li><h4><%= quack.user.username %> quacked</h4>
+	<li> on <%= quack.created_at.month %>/<%= quack.created_at.day %>:
     <%= quack.content %>
     <form action="/quacks/<%= quack.id %>/delete" method="post">
       <input type="submit" value="Delete">
