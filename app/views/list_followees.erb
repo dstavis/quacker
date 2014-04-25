@@ -1,0 +1,8 @@
+  <% if @followees %>
+  <h2>Ducks in your flock (people you're following)</h2>
+  <ul>
+    <% @followees.each do |followee| %>
+      <li><%=followee.username%></li>
+    <% end %>
+  </ul>
+  <% end %>

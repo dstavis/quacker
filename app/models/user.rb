@@ -15,14 +15,15 @@ class User < ActiveRecord::Base
   	@password = Password.create(new_password)
   	self.password_hash = @password
   end
+   # create a var for session[:user_id]
+  def followed_by user_id
+    @followers = Flocking.where(followee_id: user_id )
+  end
 
-  # def followed_by
-  #   @followers = Flocking.where(followee_id: session[:user_id])
-  # end
-
-  # def follows
-  #   @flock = User.find(session[:user_id])
-  # end
+    # same for session[:user_id]
+  def follows user_id
+    @flock = User.find( user_id )
+  end
 
   def incoming_quacks
     incoming_quacks = []
@@ -34,6 +35,5 @@ class User < ActiveRecord::Base
     end
     return incoming_quacks.sort_by(quack.id).reverse
   end
-
 
 end

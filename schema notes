@@ -48,5 +48,9 @@ end
   has_many :reverse_relationships, foreign_key: "followee_id", class_name: "Flockings"
 
 
+         <form action="/quacks/<%= quack.id %>/delete" method="post">
+           <input type="submit" value="Delete">
+         </form>
+
 
 
