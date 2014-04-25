@@ -25,7 +25,11 @@ end
 
 
 get '/users/:id' do
-	@user = User.where(id: params[:id]).first
+	p "*"*50
+p params
+p "*"*50
+	@user = User.find(params[:id])
+
 	#pull in quackmaker form??
 	erb :profile_page
 end

@@ -6,3 +6,22 @@
 <form class="logout" action="/logout" method="post">
 	<input type="Submit" value="Logout">
 </form>
+
+<form action="/quacks/create" method="post">
+	<input type="hidden" name="user_id" value="<%= @user.id %>">
+  <textarea name="content" rows="3" cols="45">
+  </textarea>
+  <input type="submit" value="Add Quack" />
+</form>
+
+<ul>
+<% @user.quacks.each do |quack| %>
+	<li><%= quack.content %></li>
+	<% end %>
+</ul>
+
+<div class="container">
+<form action="/quacks/<%= params[:id] %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>
+</div>
