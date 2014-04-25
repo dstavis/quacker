@@ -1,0 +1,21 @@
+
+<form action="/quacks/create" method="post">
+  <textarea name="content" rows="3" cols="45">
+  </textarea>
+  <input type="submit" value="Add Quack" />
+</form>
+
+  <% if @quacks %>
+  <ul>
+    <% @quacks.each do |quack| %>
+      <li><%= quack.content %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+<div class="container">
+<form action="http://127.0.0.1:9393/quacks/<%= params[:id] %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>
+</div>
+
