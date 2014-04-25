@@ -1,0 +1,26 @@
+<div class="user_card">
+	<h2><%= @user.username %></h2>
+	<p><%= @user.bio %></p>
+</div>
+
+<form class="logout" action="/logout" method="post">
+	<input type="Submit" value="Logout">
+</form>
+
+<form action="/quacks" method="post">
+	<input type="hidden" name="user_id" value="<%= @user.id %>">
+  <textarea name="content" rows="3" cols="45"></textarea>
+  <input type="submit" value="Add Quack" />
+</form>
+
+<ul>
+<% @user.quacks.each do |quack| %>
+	<li><h4><%= quack.user.username %> quacked</h4>
+    <%= quack.content %>
+    <form action="/quacks/<%= quack.id %>/delete" method="post">
+      <input type="submit" value="Delete">
+    </form>
+  </li>
+	<% end %>
+</ul>
+

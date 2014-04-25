@@ -1,0 +1,16 @@
+<% if @message %>
+<%= @message %>
+<% end %>
+
+<form class="login" action='/login' method='post'>
+	Username: <input type='text' name='username'>
+	Password: <input type='password' name='password'>
+	<input type="submit" value="Login">
+</form>
+
+<form class="login" action='/users' method='post'>
+	Username: <input type='text' name='username'>
+	Password: <input type='password' name='password'>
+	Bio: <input type="textarea" name="bio">
+	<input type="submit" value="Signup">
+</form>
