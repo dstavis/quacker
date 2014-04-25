@@ -1,0 +1,9 @@
+<h1><%= @user.username %>'s Feed</h1>
+
+<ul>
+	<% @user.incoming_quacks.each do |quack|%>
+		<li><h4><%= quack.user.username %> quacked</h4>
+	    <%= quack.content %>
+		</li>
+	<% end %>
+</ul>

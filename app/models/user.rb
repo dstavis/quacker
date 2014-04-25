@@ -23,4 +23,17 @@ class User < ActiveRecord::Base
   # def follows
   #   @flock = User.find(session[:user_id])
   # end
+
+  def incoming_quacks
+    incoming_quacks = []
+    
+    self.followees.each do |leader|
+      leader.quacks.each do |quack|
+        incoming_quacks << quack
+      end
+    end
+    return incoming_quacks.sort_by(quack.id).reverse
+  end
+
+
 end
