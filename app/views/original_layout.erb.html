@@ -8,7 +8,7 @@
 <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title>Quacker-Twitter for Ducks</title>
+  <title>Your Page Title Here :)</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -20,9 +20,9 @@
   <!-- CSS
   ================================================== -->  
   <!-- SKELETON -->
-  <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/skeleton.css">
-  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="stylesheets/base.css">
+  <link rel="stylesheet" href="stylesheets/skeleton.css">
+  <link rel="stylesheet" href="stylesheets/layout.css">
 
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -34,29 +34,26 @@
   <!-- JAVASCRIPT -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+
+  <title>Quacker- Twitter for Ducks</title>
 </head>
 
 <body>
-
-  <!-- Primary Page Layout
-  ================================================== -->
-
-  <div class="container">
-
-    <div class="header sixteen columns">
-      <a href="/"><img class="logo" src="/quacker.png" alt='Duck'></img></a>
-      <h5>Twitter for Ducks</h5>
-      <hr />
+  <header>
+    <div class="logo">
+      <img class="logo" src="/duck.png" alt='Duck'></img>
+      <h1 class="logo">Quacker</h1>
     </div>
-
-    <div class="one-third column offset-by-five">
-    <%= yield %>
+  </header>
+  <div class="wrapper">
+    <div class="main">
+      <%= yield %>
     </div>
-
-  </div><!-- container -->
-
-
-<!-- End Document
-================================================== -->
+  </div>
+  <footer>
+    <p class="attribution">
+      Creative Commons – Attribution (CC BY 3.0)<br> Duck designed by Milky - Digital innovation from the Noun Project
+    </p>
+  </footer>
 </body>
 </html>
