@@ -8,12 +8,15 @@ header{
 
 img.logo{
 	display: inline;
-	width:100px;
-	height: 100px;
+/*	width:100px;
+	height: 100px;*/
 }
 
 h1.logo{
 	display: inline;
+	line-height: 100px;
+	vertical-align: middle;
+	margin-bottom: 20px;
 }
 
 /* MAIN */
