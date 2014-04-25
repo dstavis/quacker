@@ -21,7 +21,8 @@
 </ul>
 
 <div class="container">
-<form action="/quacks/<%= params[:id] %>/delete" method="post">
+	<!-- consider changing so that each quack links to the quack's individual page (which displays only that quack), and the delete link is on that page, not this one. -->
+<form action="/quacks/<%= params[:id] %>/delete" method="post"> 
   <input type="submit" value="Delete">
 </form>
 </div>
