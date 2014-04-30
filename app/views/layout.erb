@@ -46,6 +46,9 @@
     <div class="header sixteen columns">
       <a href="/"><img class="logo" src="/quacker.png" alt='Duck'></img></a>
       <h5>Twitter for Ducks</h5>
+
+      <%= erb :_nav if logged_in? %>
+
       <hr />
     </div>
 

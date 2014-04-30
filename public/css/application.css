@@ -1,43 +1,7 @@
 /* HEADER */
 
-header{
-	background-color: #B7CC14;
-	border-bottom: 4px solid black;
-	padding: 5px;
-}
-
 img.logo{
 	display: inline;
-}
-
-h1.logo{
-	display: inline;
-	line-height: 100px;
-	vertical-align: middle;
-	margin-bottom: 20px;
-}
-
-/* MAIN */
-.wrapper{
-	position: relative;
-	width:100%;
-	margin: 0 auto;
-
-	background-color: #FFD500;
-}
-
-.main {
-	padding-top: 10px;
-
-	margin: 0 auto;
-	width: 600px;
-	height: auto;
-	background-color: #EEE;
-	-webkit-box-shadow: 0px 4px 5px 5px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 4px 5px 5px rgba(0,0,0,0.75);
-	box-shadow: 0px 4px 5px 5px rgba(0,0,0,0.75);
-
-	padding-bottom: 200px;
 }
 
 form {
@@ -54,6 +18,21 @@ form.login input {
 	margin: 10px;
 }
 
+/* NAVBAR */
+#nav {
+	display: inline;
+	font-size: 1.2em;
+}
+
+#nav ul{
+	display: inline;
+	margin-left: 10px;
+}
+
+#nav li{
+	display: inline;
+	margin: 10px;
+}
 
 
 /* FOOTER */

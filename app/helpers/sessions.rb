@@ -4,6 +4,6 @@ helpers do
 	end
 
 	def current_user
-		return "This isn't implemented yet!"
+		User.find(session[:user_id])
 	end
 end
